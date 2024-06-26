@@ -15,5 +15,10 @@
     "typescript": "^5.4.5",
     "vitest": "1.5.0",
     "wrangler": "^3.60.3"
+  },
+  "dependencies": {
+    "@friendsofshopware/app-server": "npm:@jsr/friendsofshopware__app-server@^0.0.56",
+    "hono": "^4.4.8",
+    "mustache": "^4.2.0"
   }
 }

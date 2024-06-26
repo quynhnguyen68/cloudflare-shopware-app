@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://unpkg.com/@shopware-ag/meteor-admin-sdk/cdn"></script>
+	<style>
+		#customers {
+			font-family: Arial, Helvetica, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+		  }
+
+		  #customers td, #customers th {
+			border: 1px solid #ddd;
+			padding: 8px;
+		  }
+
+		  #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+		  #customers tr:hover {background-color: #ddd;}
+
+		  #customers th {
+			padding-top: 12px;
+			padding-bottom: 12px;
+			text-align: left;
+			background-color: #04AA6D;
+			color: white;
+		  }
+	  </style>
+</head>
+<body onload="sendReadyState()">
+<script>
+	function sendReadyState() {
+		window.parent.postMessage('sw-app-loaded', '*');
+	}
+</script>
+<h1>{{ title }}</h1>
+<table id="customers">
+	<tr>
+	  <th>Order Id</th>
+	  <th>Customer</th>
+	  <th>Timestamp</th>
+	</tr>
+
+	{{#list}}
+	<tr>
+	  <td>{{order_id}}</td>
+	  <td>{{text}}</td>
+	  <td>{{created_at}}</td>
+	</tr>
+	{{/list}}
+  </table>
+</body>
+</html>
